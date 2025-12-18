@@ -1,0 +1,118 @@
+---
+title: Quick Start Guide
+description: Get up and running with Ragunathan N by creating your first documentation space.
+---
+
+## Overview
+
+Follow these steps to set up your Ragunathan N account, create your first documentation space, add pages, and start editing. You complete the process in under 10 minutes.
+
+<Callout kind="tip">
+  New users receive a free tier with unlimited spaces and 100 pages per space.
+</Callout>
+
+## Step 1: Create Your Account
+
+Sign up quickly using your email or GitHub account.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Go to [https://app.ragunathann.com](https://app.ragunathann.com) and click **Sign Up**.
+  </Step>
+  <Step title="Enter Details" icon="user">
+    Provide your email, name, and password. Verify your email via the confirmation link.
+  </Step>
+  <Step title="Complete Setup" icon="check-circle">
+    Choose your workspace name and select the free plan to access the dashboard.
+  </Step>
+</Steps>
+
+## Step 2: Create a New Documentation Space
+
+Spaces organize your docs like projects or products.
+
+<Steps>
+  <Step title="New Space" icon="plus">
+    From the dashboard, click **New Space** and enter a name like `My Project Docs`.
+  </Step>
+  <Step title="Configure Settings" icon="settings">
+    Set visibility to `Public` or `Private`, add a description, and choose brand color `#3B82F6`.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Click **Create Space** to generate your space at `https://ragunathann.com/my-project-docs`.
+  </Step>
+</Steps>
+
+## Step 3: Add and Organize Pages
+
+Build your site structure with pages and navigation.
+
+<Tabs>
+  <Tab title="Web Editor" icon="edit">
+    <Steps>
+      <Step title="Add Page">
+        In your space, click **New Page**, title it `Introduction.mdx`, and start editing.
+      </Step>
+      <Step title="Organize">
+        Drag pages in the sidebar to nest them under parents like `Guides/Quickstart`.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="CLI" icon="terminal">
+    Install the CLI and push local MDX files.
+
+    <CodeGroup tabs="npm,yarn">
+```bash
+npm install -g @ragunathann/cli
+ragunathan login
+ragunathan space create my-project-docs
+```
+```bash
+yarn global add @ragunathann/cli
+ragunathan login
+ragunathan space create my-project-docs
+```
+    </CodeGroup>
+
+    Commit your local `docs/` folder and run `ragunathan push`.
+  </Tab>
+</Tabs>
+
+## Basic Navigation and Editing
+
+Navigate via the sidebar tree. Edit pages directly with live preview.
+
+```javascript
+// Example: quickstart.mdx frontmatter
+---
+title: Quick Start
+description: Get started with your space.
+---
+```
+
+Use markdown and components like `<Callout>` for rich content. Preview changes before publishing.
+
+<Columns cols={3}>
+  <Card title="Navigation" icon="menu" href="/docs/navigation">
+    Explore sidebar, search, and breadcrumbs.
+  </Card>
+  <Card title="Editing" icon="edit-3" href="/docs/editing">
+    Markdown, MDX components, and version history.
+  </Card>
+  <Card title="Publishing" icon="globe" href="/docs/publishing">
+    Custom domains and SEO settings.
+  </Card>
+</Columns>
+
+<Expandable title="Advanced: Custom Components" default-open="false">
+  Extend with your own JSX components in `components.mdx`.
+
+  ```tsx
+  // components/MyButton.tsx
+  export function MyButton({ children }: { children: React.ReactNode }) {
+    return <button style={{ backgroundColor: '#3B82F6' }}>{children}</button>;
+  }
+  ```
+</Expandable>
+
+Your first space is ready! Next, explore themes and integrations.

@@ -1,0 +1,128 @@
+---
+title: Changelog
+description: Track updates, new features, and improvements in Ragunathan N.
+---
+
+## Recent Updates
+
+Stay informed about the latest changes in Ragunathan N. You receive new features, bug fixes, and performance improvements with each release. Check this page regularly or subscribe to notifications to keep your projects up to date.
+
+<Callout kind="info">
+  Upgrade to the latest version using your preferred package manager. See the upgrade steps below for details.
+</Callout>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for shared documentation spaces
+- Introduced custom themes with your brand color `#3B82F6`
+
+## Improvements
+
+- Enhanced search with fuzzy matching for faster results
+- Optimized rendering for pages with heavy MDX components
+
+## Bug Fixes
+
+- Fixed parsing errors in nested code blocks
+- Resolved issues with special character escaping in prose
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Integrated Mermaid diagram support via code blocks
+- Added API endpoints for programmatic documentation management
+
+## Bug Fixes
+
+- Corrected frontmatter YAML parsing for descriptions with quotes
+- Fixed heading hierarchy enforcement starting from H2
+
+## Breaking Changes
+
+- Removed legacy H1 support in page bodies – always start with H2
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature"]}>
+
+## New Features
+
+- Core MDX documentation engine with component support
+- Built-in components like `<Callout>`, `<Steps>`, and `<Tabs>`
+- YAML frontmatter validation for titles and descriptions
+
+## Initial Setup
+
+- Default documentation space for Ragunathan N projects
+
+</Update>
+
+## Upgrade Instructions
+
+Follow these steps to upgrade Ragunathan N to the latest version.
+
+<Steps>
+  <Step title="Check Current Version" icon="package">
+    Run the version check command in your project root.
+    ```bash
+    npx ragunathan-n --version
+    ```
+  </Step>
+  <Step title="Update Package" icon="download">
+    <Tabs>
+      <Tab title="npm" icon="npm">
+        ```bash
+        npm install ragunathan-n@latest
+        ```
+      </Tab>
+      <Tab title="yarn" icon="yarn">
+        ```bash
+        yarn add ragunathan-n@latest
+        ```
+      </Tab>
+      <Tab title="pnpm" icon="package">
+        ```bash
+        pnpm add ragunathan-n@latest
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Verify Installation" icon="check-circle">
+    Test a sample MDX page to ensure components render correctly.
+  </Step>
+</Steps>
+
+## Version History Overview
+
+<Columns cols={3}>
+  <Card title="v1.2.0" icon="zap" href="#">
+    Latest release with collaboration features.
+  </Card>
+  <Card title="v1.1.0" icon="shield" href="#">
+    API integrations and fixes.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#">
+    Initial stable release.
+  </Card>
+</Columns>
+
+## Upcoming Roadmap
+
+<Expandable title="Future Features (Sneak Peek)" default-open="false">
+
+Explore what's coming next to enhance your documentation experience.
+
+- Advanced analytics for page views and engagement
+- AI-assisted content generation for MDX pages
+- Full GitHub integration for changelog automation
+
+<Callout kind="tip">
+  Share feedback on these features via the community forum.
+</Callout>
+
+</Expandable>

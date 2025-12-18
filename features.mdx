@@ -1,0 +1,118 @@
+---
+title: Core Features
+description: Discover the essential features of Ragunathan N for effective documentation management.
+---
+
+## Overview
+
+Ragunathan N provides powerful tools to streamline your documentation workflow. You organize content hierarchically, collaborate seamlessly with teams, search efficiently, and export or import documents effortlessly. These core features help you maintain a centralized knowledge base.
+
+<Columns cols={2}>
+  <Card title="Organize Documents" icon="folder" href="#document-organization">
+    Structure your docs with folders, tags, and versioning.
+  </Card>
+  <Card title="Collaborate Easily" icon="users" href="#collaboration">
+    Share, comment, and edit in real-time.
+  </Card>
+  <Card title="Search Smartly" icon="search" href="#search-navigation">
+    Find content instantly with full-text search.
+  </Card>
+  <Card title="Export & Import" icon="upload" href="#export-import">
+    Move data between platforms seamlessly.
+  </Card>
+</Columns>
+
+## Document Organization
+
+You manage documents using intuitive tools like nested folders, custom tags, and version history. Create a clear structure to scale your documentation.
+
+<Steps>
+  <Step title="Create Folders" icon="folder-plus">
+    Navigate to the sidebar and click the new folder button. Name it descriptively, such as `API Reference`.
+  </Step>
+  <Step title="Add Tags" icon="tag">
+    Select a document, then assign tags like `v1.0` or `internal`.
+  </Step>
+  <Step title="Enable Versioning" icon="git-branch">
+    Toggle versioning in document settings to track changes automatically.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Use tags consistently across projects for better filtering.
+</Callout>
+
+## Collaboration and Sharing
+
+Invite team members and share links securely. You control permissions at folder or document level.
+
+<Tabs>
+  <Tab title="Web Sharing" icon="globe">
+    Generate public or private links.
+
+    ```javascript
+    const shareLink = ragunathan.shareDoc({
+      docId: 'doc-123',
+      permission: 'view' // or 'edit'
+    });
+    console.log(shareLink); // https://ragunathan.app/share/doc-123
+    ```
+  </Tab>
+  <Tab title="Team Invites" icon="users">
+    Add users via email.
+
+    ```javascript
+    await ragunathan.inviteUser({
+      email: 'team@company.com',
+      role: 'editor',
+      folderId: 'folder-456'
+    });
+    ```
+  </Tab>
+</Tabs>
+
+## Search and Navigation
+
+Full-text search indexes your entire workspace. Filter by tags, dates, or authors for precise results.
+
+| Feature          | Description                          | Shortcut     |
+|------------------|--------------------------------------|--------------|
+| Global Search    | Search across all documents          | `Cmd/Ctrl + K` |
+| Tag Filter       | Narrow by custom tags                | Sidebar tags |
+| Recent Docs      | Quick access to edited files         | Dashboard    |
+
+## Export and Import Capabilities
+
+Transfer documents without losing formatting. Support formats include Markdown, PDF, and JSON.
+
+<CodeGroup tabs="Export,Import">
+  ```javascript
+  // Export single doc
+  const exported = await ragunathan.exportDoc('doc-123', 'markdown');
+  // Returns Buffer or downloads file
+  ```
+  ```javascript
+  // Import from file
+  await ragunathan.importDoc({
+    file: markdownFile,
+    targetFolder: 'folder-456',
+    parseFrontmatter: true
+  });
+  ```
+</CodeGroup>
+
+<ExpandableGroup>
+  <Expandable title="Advanced Export Options" default-open="false">
+    Customize exports with options like including images or excluding drafts.
+
+    ```javascript
+    ragunathan.exportWorkspace({
+      format: 'pdf',
+      includeImages: true,
+      excludeDrafts: true
+    });
+    ```
+  </Expandable>
+</ExpandableGroup>
+
+These features make Ragunathan N your go-to for documentation. Start organizing today to boost productivity.
